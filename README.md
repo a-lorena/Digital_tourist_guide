@@ -1,2 +1,25 @@
-# Digital_tourist_guide
+## Digitalni turistički vodič
 Android aplikacija s ulogom turističkog vodiča
+
+
+### Tehnologije i razvojni alati
+- Android Studio
+- Java
+- Firebase
+  - Authentication
+  - Firestore Database
+- Maps SDK (Google Maps Platform)
+
+
+### Mogućnosti aplikacije
+- Korisnik
+  - odabir grada ili automatsko lociranje
+  - pregled lokacija i ocjenjivanje (top liste)
+  - izrada listi što želimo posjetiti
+  - uključivanje podsjetnika za događanja
+  - objava putopisa, te pregled i komentiranje putopisa drugih korisnika
+  - obavijesti za nove gradove, nove lokacije odabranog grada i komentare
+  - “Đir po gradu” → geofence, obavijest kada smo u blizini lokacije
+
+- Admin
+  - dodavanje, uređivanje i brisanje gradova, lokacija i događanja
