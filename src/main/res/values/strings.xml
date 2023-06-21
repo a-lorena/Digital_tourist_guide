@@ -1,0 +1,194 @@
+<resources>
+    <string name="app_name">Digital Tourist Guide</string>
+
+    <string name="navigation_drawer_open">Otvori navigacijsku ladicu</string>
+    <string name="navigation_drawer_close">Zatvori navigacijsku ladicu</string>
+
+    <!-- LOGIN & REGISTRATION -->
+    <string name="input_name">Ime i prezime</string>
+    <string name="input_email">E-mail</string>
+    <string name="input_password">Lozinka</string>
+    <string name="repeat_password">Ponovite lozinku</string>
+    <string name="login_button">Prijava</string>
+    <string name="register_button">Registriraj me</string>
+    <string name="registration_link">Registracija</string>
+
+    <!-- ADMIN MAIN -->
+    <string name="main_admin_title">Dobrodošli!</string>
+
+    <!-- ADD LOCATION FORM -->
+    <string name="add_location_toolbar">Unesite podatke o lokaciji</string>
+    <string name="edit_location_toolbar">Uređivanje podataka</string>
+    <string name="input_location_name">Ime lokacije</string>
+    <string name="input_location_type">Tip lokacije</string>
+    <string name="input_location_city">Grad</string>
+    <string name="input_location_county">Županija</string>
+    <string name="input_location_latitude">Geo. širina</string>
+    <string name="input_location_longitude">Geo. dužina</string>
+    <string name="input_location_price">Cijena</string>
+    <string name="input_working_hours">Radno vrijeme</string>
+    <string name="input_location_description">Opis lokacije</string>
+    <string name="save_location_button">Spremi</string>
+
+    <string name="input_monument_title">Ime spomenika</string>
+    <string name="input_town_description">Opis grada</string>
+
+    <string name="add_putopis_toolbar">Novi putopis</string>
+    <string name="edit_putopis_toolbar">Uredi putopis</string>
+    <string name="input_putopis_title">Naslov</string>
+    <string name="input_putopis_city">Grad</string>
+    <string name="input_putopis_text">Tekst</string>
+    <string name="save_putopis_button">Spremi</string>
+
+    <!-- ADD EVENT FORM -->
+    <string name="add_event_title">Unesite podatke o događaju</string>
+    <string name="input_event_name">Naziv događaja</string>
+    <string name="input_event_city">Grad u kojem se održava</string>
+    <string name="input_event_location">Lokacija na kojoj se održava</string>
+    <string name="input_event_latitude">Geo. širina</string>
+    <string name="input_event_longitude">Geo. dužina</string>
+    <string name="input_event_date_start">Datum od</string>
+    <string name="input_event_date_end">Datum do</string>
+    <string name="input_event_time_start">Početak</string>
+    <string name="input_event_time_end">Kraj</string>
+    <string name="input_event_description">Opis događaja</string>
+    <string name="save_event_button">Spremi</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_profil">Profil</string>
+
+    <!-- PREVIEW -->
+    <string name="preview_city">Grad</string>
+    <string name="preview_title">Lokacija</string>
+    <string name="preview_price">Cijena</string>
+    <string name="preview_working_hours">Radno vrijeme</string>
+    <string name="preview_description">Opis</string>
+    <string name="preview_show_more">Prikaži više</string>
+    <string name="preview_show_less">Prikaži manje</string>
+    <string name="preview_show_all">SVI KOMENTARI</string>
+
+    <string name="event_preview_title">Naziv događaja</string>
+    <string name="event_preview_time">Vrijeme održavanja</string>
+    <string name="event_preview_location">Lokacija</string>
+
+    <string name="putopis_preview_comment">Komentirajte...</string>
+
+    <string name="rating_preview_location">Lokacija</string>
+    <string name="rating_preview_add_comment">Dodajte komentar</string>
+
+    <string name="city_preview_city">Ime grada</string>
+    <string name="city_preview_county">Županija</string>
+
+    <!-- BOOKMARKS -->
+    <string name="bookmarks_list_toolbar">Odaberite listu</string>
+    <string name="bookmarks_new_list_title">Naslov</string>
+    <string name="rating_new">Komentar</string>
+
+    <!-- PUTOPISI -->
+    <string name="putopisi_search">Upišite ime grada…</string>
+
+    <!-- PROFILE -->
+    <string name="profile_title">Moj profil</string>
+    <string name="profile_new_list">Novi plan</string>
+    <string name="profile_new_putopis">Novi putopis</string>
+
+    <!-- SETTINGS -->
+    <string name="settings_title">Postavke</string>
+    <string name="settings_new_town">Obavijesti o novim gradovima</string>
+    <string name="settings_news">Obavijesti o novostima u odabranom gradu</string>
+    <string name="settings_new_comments">Obavijesti o novim komentarima</string>
+    <string name="settins_change_city">Promijeni grad</string>
+    <string name="settings_edit_profile">Uredi profil</string>
+
+    <string name="settings_edit_profile_title">Izmjena podataka</string>
+    <string name="settings_edit_profile_header_image">Header image</string>
+    <string name="settings_edit_profile_profile_image">Profile image</string>
+    <string name="settings_edit_profile_input_name">Ime i prezime</string>
+
+    <!-- START USER -->
+    <string name="start_user_title">Odaberite grad</string>
+    <string name="start_user_top_city">Top gradovi</string>
+    <string name="start_user_top_institution">Top kulturne ustanove</string>
+    <string name="start_user_top_monuments">Top spomenici</string>
+    <string name="start_user_top_event">Top događaji</string>
+    <string name="start_user_top_nature">Top parkovi i plaže</string>
+    <string name="start_user_top_restaurant">Top restorani i kafići</string>
+    <string name="start_user_top_acc">Top smještaj i parking</string>
+
+    <string name="start_user_choose_city">Upišite ime grada…</string>
+
+    <!-- WALK -->
+    <string name="start_walk">Započni đir</string>
+
+    <!-- CARDS -->
+    <string name="comment_author">Autor</string>
+    <string name="comment_date">Datum</string>
+    <string name="event_title">Naziv</string>
+    <string name="event_time">Vrijeme održavanja</string>
+    <string name="photo_name">Naziv</string>
+    <string name="list_place_name">Naziv mjesta</string>
+    <string name="news_date">Datum</string>
+    <string name="news_text">Tekst</string>
+    <string name="putopis_title">Naslov</string>
+    <string name="putopis_text">Tekst</string>
+    <string name="putopis_read_more">…</string>
+
+    <!-- FRAGMENTS ADMIN -->
+    <string name="select_hotel">Hoteli</string>
+    <string name="select_apartment">Apartmani</string>
+    <string name="select_parking">Parking</string>
+    <string name="select_all">Sve</string>
+    <string name="search_accs">Upišite naziv grada…</string>
+    <string name="search_events">Upišite naziv događaja…</string>
+    <string name="select_museum">Muzeji</string>
+    <string name="select_cinema">Kina</string>
+    <string name="select_church">Crkve</string>
+    <string name="search_institutions">Upišite naziv ustanove…</string>
+    <string name="search_monuments">Upišite naziv spomenika…</string>
+    <string name="select_park">Parkovi</string>
+    <string name="select_beach">Plaže</string>
+    <string name="search_nature">Upišite naziv lokacije…</string>
+    <string name="select_restaurant">Restorani</string>
+    <string name="select_bar">Kafići</string>
+    <string name="search_restaurant">Upišite naziv lokacije…</string>
+    <string name="search_town">Upišite naziv grada…</string>
+
+    <!-- FRAGMENTS HOME -->
+    <string name="home_description">Opis</string>
+    <string name="home_refresh_news">OSVJEŽI</string>
+    <string name="home_top_institutions">Top kulturne ustanove</string>
+    <string name="home_top_monuments">Top spomenici</string>
+    <string name="home_top_nature">Top parkovi i plaže</string>
+    <string name="home_top_restaurant">Top restorani i kafići</string>
+    <string name="home_top_acc">Top smještaj i parking</string>
+
+    <!-- TAB TITLES -->
+    <string name="tab_text_1">Lista želja</string>
+    <string name="tab_text_2">Putopisi</string>
+    <string name="title_activity_walk">Map</string>
+    <string name="title_activity_karta">Map</string>
+
+    <!-- DRAWER MENU -->
+    <string name="drawer_name">Ime Prezime</string>
+    <string name="drawer_town">Gradovi</string>
+    <string name="drawer_institution">Kulturne ustanove</string>
+    <string name="drawer_monuments">Spomenici</string>
+    <string name="drawer_events">Događanja</string>
+    <string name="drawer_nature">Parkovi i plaže</string>
+    <string name="drawer_restaurant">Restorani i kafići</string>
+    <string name="drawer_acc">Smještaj i parking</string>
+    <string name="drawer_logout">Odjava</string>
+    <string name="drawer_news">Novosti</string>
+    <string name="drawer_putopisi">Putopisi</string>
+    <string name="drawer_profile">Profil</string>
+    <string name="drawer_walk">Đir po gradu</string>
+    <string name="drawer_settings">Postavke</string>
+
+    <!-- TOOLBAR MENU -->
+    <string name="toolbar_edit">Uredi</string>
+    <string name="toolbar_delete">Izbriši</string>
+    <string name="toolbar_bookmark">Dodaj na listu</string>
+    <string name="toolbar_save">Spremi</string>
+    <string name="toolbar_reminder">Uključi podsjetnik</string>
+    <string name="toolbar_town">Odaberi grad</string>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/comment_card_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/comment_profile_picture"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/circular_image" />
+
+        <TextView
+            android:id="@+id/comment_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/comment_author"
+            android:textColor="@color/dark_green"
+            app:layout_constraintBottom_toBottomOf="@id/comment_profile_picture"
+            app:layout_constraintStart_toEndOf="@id/comment_profile_picture"
+            app:layout_constraintTop_toTopOf="@id/comment_profile_picture" />
+
+        <ru.embersoft.expandabletextview.ExpandableTextView
+            android:id="@+id/comment_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:paddingStart="10dp"
+            app:etv_animationTime="20"
+            app:etv_expandLines="5"
+            app:etv_textContentColor="@color/black"
+            app:etv_textContentSize="15sp"
+            app:etv_textExpand="@string/preview_show_more"
+            app:etv_textShrink="@string/preview_show_less"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/comment_profile_picture" />
+
+        <TextView
+            android:id="@+id/comment_timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:paddingStart="10dp"
+            android:text="@string/comment_date"
+            android:textColor="@color/dark_green"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@id/comment_text"
+            app:layout_constraintTop_toBottomOf="@id/comment_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

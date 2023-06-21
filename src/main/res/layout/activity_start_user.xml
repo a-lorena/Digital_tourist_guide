@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".User.StartUser"
+    android:background="@color/light_gray">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/user_main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/mid_green"
+            app:titleTextColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/start_user_title" />
+
+        <TextView
+            android:id="@+id/top_towns"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/start_user_top_city"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_green"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/all_towns"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_main_toolbar" />
+
+        <ImageView
+            android:id="@+id/all_towns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:padding="5dp"
+            android:src="@drawable/icon_show_all"
+            app:layout_constraintBottom_toBottomOf="@id/top_towns"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/top_towns"
+            app:layout_constraintTop_toTopOf="@id/top_towns"
+            app:tint="@color/dark_green" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/user_town_rec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_towns" />
+
+        <TextView
+            android:id="@+id/top_institutions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/start_user_top_institution"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_green"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_town_rec" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/user_institutions_rec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_institutions" />
+
+        <TextView
+            android:id="@+id/top_monuments"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/start_user_top_monuments"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_green"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_institutions_rec" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/user_monument_rec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_monuments" />
+
+        <TextView
+            android:id="@+id/top_events"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/start_user_top_event"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_green"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_monument_rec"
+            android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/user_event_rec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_events"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/top_nature"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/start_user_top_nature"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_green"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_event_rec" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/user_nature_rec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_nature" />
+
+        <TextView
+            android:id="@+id/top_restaurants"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/start_user_top_restaurant"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_green"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_nature_rec" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/user_restaurants_rec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_restaurants" />
+
+        <TextView
+            android:id="@+id/top_acc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/start_user_top_acc"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_green"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_restaurants_rec" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/user_acc_rec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_acc" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

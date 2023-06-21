@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_green"
+    tools:context=".Forms.EventForm">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/add_event_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/mid_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/add_event_title"
+            app:titleTextColor="@color/white" />
+
+        <EditText
+            android:id="@+id/input_event_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_corners_input"
+            android:hint="@string/input_event_name"
+            android:inputType="text"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:textCursorDrawable="@drawable/cursor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_event_toolbar" />
+
+        <EditText
+            android:id="@+id/input_event_town"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_corners_input"
+            android:hint="@string/input_event_city"
+            android:inputType="text"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:textCursorDrawable="@drawable/cursor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_event_name" />
+
+        <EditText
+            android:id="@+id/input_event_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_corners_input"
+            android:hint="@string/input_event_location"
+            android:inputType="text"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:textCursorDrawable="@drawable/cursor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_event_town" />
+
+        <EditText
+            android:id="@+id/input_event_date_start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/round_corners_input"
+            android:cursorVisible="false"
+            android:focusableInTouchMode="false"
+            android:hint="@string/input_event_date_start"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            app:layout_constraintBottom_toTopOf="@id/input_event_time_start"
+            app:layout_constraintEnd_toStartOf="@id/input_event_date_end"
+            app:layout_constraintStart_toStartOf="@id/input_event_town"
+            app:layout_constraintTop_toBottomOf="@id/input_event_location" />
+
+        <EditText
+            android:id="@+id/input_event_date_end"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corners_input"
+            android:cursorVisible="false"
+            android:focusableInTouchMode="false"
+            android:hint="@string/input_event_date_end"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/input_event_date_start"
+            app:layout_constraintEnd_toEndOf="@id/input_event_town"
+            app:layout_constraintStart_toEndOf="@id/input_event_date_start"
+            app:layout_constraintTop_toTopOf="@id/input_event_date_start" />
+
+        <EditText
+            android:id="@+id/input_event_time_start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/round_corners_input"
+            android:cursorVisible="false"
+            android:focusableInTouchMode="false"
+            android:hint="@string/input_event_time_start"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            app:layout_constraintEnd_toStartOf="@id/input_event_time_end"
+            app:layout_constraintStart_toStartOf="@id/input_event_town"
+            app:layout_constraintTop_toBottomOf="@id/input_event_date_start" />
+
+        <EditText
+            android:id="@+id/input_event_time_end"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corners_input"
+            android:cursorVisible="false"
+            android:focusableInTouchMode="false"
+            android:hint="@string/input_event_time_end"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/input_event_time_start"
+            app:layout_constraintEnd_toEndOf="@id/input_event_town"
+            app:layout_constraintStart_toEndOf="@id/input_event_time_start"
+            app:layout_constraintTop_toTopOf="@id/input_event_time_start" />
+
+        <EditText
+            android:id="@+id/input_event_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_corners_input"
+            android:hint="@string/input_event_description"
+            android:inputType="text"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:textCursorDrawable="@drawable/cursor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_event_time_start" />
+
+        <ImageView
+            android:id="@+id/add_event_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/light_red"
+            android:padding="10dp"
+            android:src="@drawable/icon_add_photo"
+            app:layout_constraintBottom_toTopOf="@id/event_image_preview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_event_description" />
+
+        <ImageView
+            android:id="@+id/event_image_preview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/save_event_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_event_image" />
+
+        <Button
+            android:id="@+id/save_event_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/round_corners_input"
+            android:backgroundTint="@color/mid_green"
+            android:text="@string/save_event_button"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/event_image_preview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

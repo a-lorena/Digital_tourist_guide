@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="circular_image">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="rounded_corners_image">
+        <item name="cornerSize">15dp</item>
+    </style>
+
+    <style name="send_image">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@android:color/white</item>
+    </style>
+</resources>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    tools:context=".Admin.InstitutionAdminFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/admin_institution_cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/admin_institution_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/teal_700"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/select_museum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_corners"
+            android:backgroundTint="@color/orange"
+            android:padding="10dp"
+            android:text="@string/select_museum"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@id/select_cinema"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/admin_institution_toolbar" />
+
+        <TextView
+            android:id="@+id/select_cinema"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/round_corners"
+            android:backgroundTint="@color/light_red"
+            android:padding="10dp"
+            android:text="@string/select_cinema"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@id/select_church"
+            app:layout_constraintStart_toEndOf="@id/select_museum"
+            app:layout_constraintTop_toTopOf="@id/select_museum" />
+
+        <TextView
+            android:id="@+id/select_church"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/round_corners"
+            android:backgroundTint="@color/orange"
+            android:padding="10dp"
+            android:text="@string/select_church"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@id/select_all"
+            app:layout_constraintStart_toEndOf="@id/select_cinema"
+            app:layout_constraintTop_toTopOf="@id/select_cinema" />
+
+        <TextView
+            android:id="@+id/select_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/round_corners"
+            android:backgroundTint="@color/light_red"
+            android:padding="10dp"
+            android:text="@string/select_all"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/select_church"
+            app:layout_constraintTop_toTopOf="@id/select_church" />
+
+        <EditText
+            android:id="@+id/search_institution_admin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/round_corners_input"
+            android:hint="@string/search_institutions"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            app:layout_constraintBottom_toTopOf="@id/institution_list_admin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/select_museum" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/institution_list_admin"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_institution_admin" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_institution_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:src="@drawable/icon_add"
+            app:backgroundTint="@color/light_red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

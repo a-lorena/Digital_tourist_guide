@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    tools:context=".User.OpenReminder">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_gray">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/event_preview_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/mid_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:subtitle="@string/preview_city"
+            app:subtitleTextColor="@color/white"
+            app:title="@string/event_preview_title"
+            app:titleTextColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/event_preview_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/event_preview_toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/event_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corners_bottom"
+            android:backgroundTint="@color/light_green"
+            android:elevation="6dp"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintBottom_toTopOf="@id/event_preview_comments"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/event_preview_image">
+
+            <TextView
+                android:id="@+id/text_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:text="@string/event_preview_time"
+                android:textColor="@color/dark_green"
+                app:layout_constraintBottom_toTopOf="@id/event_preview_time"
+                app:layout_constraintStart_toStartOf="@id/event_preview_time"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ru.embersoft.expandabletextview.ExpandableTextView
+                android:id="@+id/event_preview_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corners"
+                android:backgroundTint="@color/white"
+                android:elevation="6dp"
+                android:padding="10dp"
+                app:etv_animationTime="20"
+                app:etv_expandLines="5"
+                app:etv_textContentColor="@color/black"
+                app:etv_textContentSize="15sp"
+                app:etv_textExpand="@string/preview_show_more"
+                app:etv_textShrink="@string/preview_show_less"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_date" />
+
+            <TextView
+                android:id="@+id/text_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:text="@string/event_preview_location"
+                android:textColor="@color/dark_green"
+                app:layout_constraintBottom_toTopOf="@id/event_preview_location"
+                app:layout_constraintStart_toStartOf="@id/event_preview_location"
+                app:layout_constraintTop_toBottomOf="@id/event_preview_time" />
+
+            <ru.embersoft.expandabletextview.ExpandableTextView
+                android:id="@+id/event_preview_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corners"
+                android:backgroundTint="@color/white"
+                android:elevation="6dp"
+                android:padding="10dp"
+                app:etv_animationTime="20"
+                app:etv_expandLines="5"
+                app:etv_textContentColor="@color/black"
+                app:etv_textContentSize="15sp"
+                app:etv_textExpand="@string/preview_show_more"
+                app:etv_textShrink="@string/preview_show_less"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_location" />
+
+            <TextView
+                android:id="@+id/text_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:text="@string/preview_description"
+                android:textColor="@color/dark_green"
+                app:layout_constraintBottom_toTopOf="@id/event_preview_description"
+                app:layout_constraintStart_toStartOf="@id/event_preview_description"
+                app:layout_constraintTop_toBottomOf="@id/event_preview_location" />
+
+            <ru.embersoft.expandabletextview.ExpandableTextView
+                android:id="@+id/event_preview_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/round_corners"
+                android:backgroundTint="@color/white"
+                android:elevation="6dp"
+                android:padding="10dp"
+                app:etv_animationTime="20"
+                app:etv_expandLines="5"
+                app:etv_textContentColor="@color/black"
+                app:etv_textContentSize="15sp"
+                app:etv_textExpand="@string/preview_show_more"
+                app:etv_textShrink="@string/preview_show_less"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_description" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/event_preview_comments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_corners"
+            android:backgroundTint="@color/light_green"
+            android:elevation="6dp"
+            android:maxHeight="340dp"
+            android:minHeight="300dp"
+            app:layout_constraintBottom_toTopOf="@id/event_show_all_comments"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/event_container" />
+
+        <TextView
+            android:id="@+id/event_show_all_comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="30dp"
+            android:padding="5dp"
+            android:text="@string/preview_show_all"
+            android:textColor="@color/dark_green"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/event_preview_comments" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

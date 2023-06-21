@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_green"
+    tools:context=".Preview.PutopisPreview">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/putopis_preview_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/mid_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleTextColor="@color/white" />
+
+        <ru.embersoft.expandabletextview.ExpandableTextView
+            android:id="@+id/putopis_preview_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_corners"
+            android:backgroundTint="@color/white"
+            android:padding="20dp"
+            app:etv_animationTime="20"
+            app:etv_expandLines="20"
+            app:etv_textContentColor="@color/black"
+            app:etv_textContentSize="15sp"
+            app:etv_textExpand="@string/preview_show_more"
+            app:etv_textShrink="@string/preview_show_less"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/putopis_preview_toolbar" />
+
+        <ImageView
+            android:id="@+id/putopis_preview_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/putopis_preview_text" />
+
+        <EditText
+            android:id="@+id/putopis_preview_input_comment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_corners_input"
+            android:hint="@string/putopis_preview_comment"
+            android:padding="10dp"
+            android:paddingStart="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/putopis_preview_send_comment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/putopis_preview_photo" />
+
+        <ImageView
+            android:id="@+id/putopis_preview_send_comment"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/round_corners"
+            android:backgroundTint="@color/light_red"
+            android:padding="10dp"
+            android:src="@drawable/icon_send"
+            app:layout_constraintBottom_toBottomOf="@id/putopis_preview_input_comment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/putopis_preview_input_comment"
+            app:layout_constraintTop_toTopOf="@id/putopis_preview_input_comment"
+            app:shapeAppearanceOverlay="@style/circular_image"
+            app:tint="@color/white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/putopis_preview_comments_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:maxHeight="340dp"
+            android:minHeight="300dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/putopis_preview_input_comment" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

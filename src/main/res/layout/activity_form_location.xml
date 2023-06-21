@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_green"
+    tools:context=".Forms.TownForm">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/add_location_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/mid_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/add_location_toolbar"
+            app:titleTextColor="@color/white" />
+
+        <EditText
+            android:id="@+id/input_location_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_corners_input"
+            android:hint="@string/input_location_name"
+            android:inputType="text"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:textCursorDrawable="@drawable/cursor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_location_toolbar" />
+
+        <EditText
+            android:id="@+id/input_location_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_corners_input"
+            android:hint="@string/input_location_type"
+            android:inputType="text"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:textCursorDrawable="@drawable/cursor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_location_name" />
+
+        <EditText
+            android:id="@+id/input_location_town"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_corners_input"
+            android:hint="@string/input_location_city"
+            android:inputType="text"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:textCursorDrawable="@drawable/cursor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_location_type" />
+
+        <EditText
+            android:id="@+id/input_location_county"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_corners_input"
+            android:hint="@string/input_location_county"
+            android:inputType="text"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:textCursorDrawable="@drawable/cursor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_location_town" />
+
+        <EditText
+            android:id="@+id/input_location_latitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/round_corners_input"
+            android:hint="@string/input_location_latitude"
+            android:inputType="numberDecimal"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:textCursorDrawable="@drawable/cursor"
+            app:layout_constraintEnd_toStartOf="@id/input_location_longitude"
+            app:layout_constraintStart_toStartOf="@id/input_location_county"
+            app:layout_constraintTop_toBottomOf="@id/input_location_county" />
+
+        <EditText
+            android:id="@+id/input_location_longitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corners_input"
+            android:hint="@string/input_location_longitude"
+            android:inputType="numberDecimal"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:textCursorDrawable="@drawable/cursor"
+            app:layout_constraintEnd_toEndOf="@id/input_location_name"
+            app:layout_constraintStart_toEndOf="@id/input_location_latitude"
+            app:layout_constraintTop_toTopOf="@id/input_location_latitude" />
+
+        <EditText
+            android:id="@+id/input_working_hours"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_corners_input"
+            android:hint="@string/input_working_hours"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:textCursorDrawable="@drawable/cursor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_location_latitude" />
+
+        <EditText
+            android:id="@+id/input_location_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_corners_input"
+            android:hint="@string/input_location_description"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:textCursorDrawable="@drawable/cursor"
+            app:layout_constraintBottom_toTopOf="@id/add_event_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_working_hours" />
+
+        <ImageView
+            android:id="@+id/add_event_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/light_red"
+            android:padding="10dp"
+            android:src="@drawable/icon_add_photo"
+            app:layout_constraintBottom_toTopOf="@id/event_image_preview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_location_description" />
+
+        <ImageView
+            android:id="@+id/event_image_preview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/save_location_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_event_image" />
+
+        <Button
+            android:id="@+id/save_location_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/round_corners_input"
+            android:backgroundTint="@color/mid_green"
+            android:text="@string/save_location_button"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/event_image_preview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.digitaltouristguide">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DigitalTouristGuide">
+        <activity android:name=".LoadingUserActivity">
+
+        </activity>
+        <activity android:name=".User.ProfileActivity" />
+        <activity android:name=".User.TownUser" />
+        <activity android:name=".Edit.PutopisEdit" />
+        <activity android:name=".Preview.PutopisPreview" />
+        <activity android:name=".Forms.PutopisForm" />
+        <activity android:name=".Preview.RatingsPreview" />
+        <activity android:name=".User.SettingsEditData" />
+        <activity android:name=".User.BookmarksPreview" />
+
+        <receiver
+            android:name=".Service.GeofenceBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity android:name=".User.WalkActivity" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".User.OpenReminder"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:taskAffinity="" />
+        <activity android:name=".User.SettingsActivity" />
+        <activity android:name=".User.PickBookmarksList" />
+        <activity android:name=".User.MyProfile" />
+        <activity android:name=".Edit.EventEdit" />
+        <activity android:name=".Preview.EventPreview" />
+        <activity android:name=".Edit.AccEdit" />
+        <activity android:name=".Preview.AccPreview" />
+        <activity android:name=".Forms.AccForm" />
+        <activity android:name=".Edit.RestaurantEdit" />
+        <activity android:name=".Preview.RestaurantPreview" />
+        <activity android:name=".Forms.RestaurantForm" />
+        <activity android:name=".Edit.NatureEdit" />
+        <activity android:name=".Preview.NaturePreview" />
+        <activity android:name=".Forms.NatureForm" />
+        <activity android:name=".Edit.MonumentEdit" />
+        <activity android:name=".Preview.MonumentPreview" />
+        <activity android:name=".Edit.InstitutionEdit" />
+        <activity android:name=".Edit.TownEdit" />
+        <activity android:name=".Preview.InstitutionPreview" />
+        <activity android:name=".Forms.EventForm" />
+        <activity android:name=".Forms.MonumentForm" />
+        <activity android:name=".Forms.InstitutionForm" />
+        <activity android:name=".Preview.TownPreview" />
+        <activity android:name=".User.StartUser" />
+        <activity android:name=".Forms.TownForm" />
+        <activity android:name=".Admin.MainAdmin" />
+        <activity android:name=".Admin.HomeAdmin" />
+        <activity android:name=".User.HomeUser" />
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".Service.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".Service.AlertReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.touristguide.alarm.EVENT_REMINDER" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

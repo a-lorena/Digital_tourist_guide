@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:id="@+id/first_group"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/town_nav_item"
+            android:icon="@drawable/icon_town"
+            android:title="@string/drawer_town" />
+        <item
+            android:id="@+id/institution_nav_item"
+            android:icon="@drawable/icon_institution"
+            android:title="@string/drawer_institution" />
+        <item
+            android:id="@+id/monuments_nav_item"
+            android:icon="@drawable/icon_monument"
+            android:title="@string/drawer_monuments" />
+        <item
+            android:id="@+id/events_nav_item"
+            android:icon="@drawable/icon_event"
+            android:title="@string/drawer_events" />
+        <item
+            android:id="@+id/nature_nav_item"
+            android:icon="@drawable/icon_park"
+            android:title="@string/drawer_nature" />
+        <item
+            android:id="@+id/restaurant_nav_item"
+            android:icon="@drawable/icon_restaurant"
+            android:title="@string/drawer_restaurant" />
+        <item
+            android:id="@+id/acc_nav_item"
+            android:icon="@drawable/icon_apartment"
+            android:title="@string/drawer_acc" />
+    </group>
+
+    <group android:id="@+id/second_group">
+        <item
+            android:id="@+id/logout"
+            android:title="@string/drawer_logout" />
+    </group>
+
+</menu>

@@ -1,0 +1,199 @@
+package com.example.digitaltouristguide.Forms;
+
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.digitaltouristguide.R;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class TownForm extends AppCompatActivity {
+
+	Toolbar toolbar;
+	EditText nameET, typeET, townET, countyET, latET, lonET, workingHoursET, descET;
+	ImageView addImageButton, imagePreview;
+	Button saveButton;
+	ProgressDialog pd;
+
+	FirebaseFirestore db;
+	StorageReference storage;
+
+	Uri imageUri;
+	private static final int PICK_IMAGE_REQUEST = 1;
+
+	RequestQueue requestQueue;
+	String URL = "https://fcm.googleapis.com/fcm/send";
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_form_location);
+
+		String formType = getIntent().getStringExtra("form_type");
+		db = FirebaseFirestore.getInstance();
+
+		requestQueue = Volley.newRequestQueue(this);
+
+		toolbar = findViewById(R.id.add_location_toolbar);
+		nameET = findViewById(R.id.input_location_name);
+		typeET = findViewById(R.id.input_location_type);
+		townET = findViewById(R.id.input_location_town);
+		countyET = findViewById(R.id.input_location_county);
+		latET = findViewById(R.id.input_location_latitude);
+		lonET = findViewById(R.id.input_location_longitude);
+		workingHoursET = findViewById(R.id.input_working_hours);
+		descET = findViewById(R.id.input_location_description);
+		addImageButton = findViewById(R.id.add_event_image);
+		imagePreview = findViewById(R.id.event_image_preview);
+		saveButton = findViewById(R.id.save_location_button);
+
+		if (formType.equals("town")) {
+			typeET.setVisibility(View.GONE);
+			townET.setVisibility(View.GONE);
+			workingHoursET.setVisibility(View.GONE);
+		}
+
+		addImageButton.setOnClickListener(view -> selectImage());
+		saveButton.setOnClickListener(view -> { getInput(); });
+	}
+
+	private void selectImage() {
+		Intent intent = new Intent();
+		intent.setType("image/*");
+		intent.setAction(Intent.ACTION_GET_CONTENT);
+		startActivityForResult(intent, PICK_IMAGE_REQUEST);
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+
+		if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+			imageUri = data.getData();
+			imagePreview.setImageURI(imageUri);
+			imagePreview.setVisibility(View.VISIBLE);
+		}
+	}
+
+	private void getInput() {
+		String nameTXT = nameET.getText().toString();
+		String countyTXT = countyET.getText().toString();
+		Double latTXT = Double.parseDouble(latET.getText().toString());
+		Double lonTXT = Double.parseDouble(lonET.getText().toString());
+		String descTXT = descET.getText().toString();
+
+		if (checkEmptyFields(nameTXT, latTXT, lonTXT)) {
+			saveTown(nameTXT, countyTXT, latTXT, lonTXT, descTXT);
+		}
+	}
+
+	private void saveTown(String name, String county, Double lat, Double lon, String desc) {
+		pd = new ProgressDialog(this);
+		pd.setMessage("Spremanje...");
+		pd.show();
+
+		Map<String, Object> town = new HashMap<>();
+		town.put("name", name);
+		town.put("county", county);
+		town.put("latitude", lat);
+		town.put("longitude", lon);
+		town.put("description", desc);
+		town.put("comments", 0);
+		town.put("stars", 0);
+		town.put("rating", 0);
+
+		if (imageUri != null) {
+			String imageName = name + "_image";
+			storage = FirebaseStorage.getInstance().getReference("images/" + imageName);
+			storage.putFile(imageUri);
+			town.put("imageName", imageName);
+		}
+
+		db.collection("cities").add(town).addOnSuccessListener(documentReference -> {
+			pd.dismiss();
+
+			String id = documentReference.getId();
+			Toast.makeText(TownForm.this, "Grad je spremljen.", Toast.LENGTH_SHORT).show();
+
+			sendNotification(name, id);
+			finish();
+
+		}).addOnFailureListener(e -> {
+			pd.dismiss();
+			Toast.makeText(TownForm.this, "Spremanje neuspješno, pokušajte kasnije.\n Pogreška: " + e, Toast.LENGTH_SHORT).show();
+		});
+	}
+
+	private boolean checkEmptyFields(String name, Double lat, Double lon) {
+		if (name.isEmpty() || lat.isNaN() || lon.isNaN()) {
+			Toast.makeText(this, "Ispunite sva polja.", Toast.LENGTH_SHORT).show();
+			return false;
+		}
+
+		return true;
+	}
+
+	private void sendNotification(String townName, String townID) {
+		JSONObject json = new JSONObject();
+
+		try {
+			json.put("to", "/topics/" + "newTown");
+
+			JSONObject notificationObj = new JSONObject();
+			notificationObj.put("title", "Dodan je novi grad!");
+			notificationObj.put("body", "Istražite " + townName);
+
+			JSONObject extraData = new JSONObject();
+			extraData.put("townID", townID);
+			extraData.put("category", "town");
+
+			json.put("notification", notificationObj);
+			json.put("data", extraData);
+
+			JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, URL, json,
+					response -> {
+
+					}, error -> {
+
+					}) {
+				@Override
+				public Map<String, String> getHeaders() throws AuthFailureError {
+					Map<String, String> header = new HashMap<>();
+					header.put("content-type", "application/json");
+					header.put("authorization", "key=");
+
+					return header;
+				}
+			};
+
+			requestQueue.add(request);
+			finish();
+
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+	}
+}

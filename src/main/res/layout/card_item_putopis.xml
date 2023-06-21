@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/putopis_card_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/putopis_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_green"
+            android:maxLines="3"
+            android:padding="10dp"
+            android:text="@string/putopis_title"
+            android:textAlignment="center"
+            android:textColor="@color/dark_green"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/putopis_profile_picture"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/putopis_title"
+            app:shapeAppearanceOverlay="@style/circular_image" />
+
+        <TextView
+            android:id="@+id/putopis_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:padding="10dp"
+            android:text="@string/comment_date"
+            android:textColor="@color/dark_green"
+            app:layout_constraintBottom_toBottomOf="@id/putopis_profile_picture"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/putopis_profile_picture" />
+
+        <TextView
+            android:id="@+id/putopis_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/comment_author"
+            android:textColor="@color/dark_green"
+            app:layout_constraintBottom_toBottomOf="@id/putopis_profile_picture"
+            app:layout_constraintStart_toEndOf="@id/putopis_profile_picture"
+            app:layout_constraintTop_toTopOf="@id/putopis_profile_picture" />
+
+        <TextView
+            android:id="@+id/putopis_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="5"
+            android:padding="10dp"
+            android:text="@string/putopis_text"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/putopis_profile_picture" />
+
+        <TextView
+            android:id="@+id/putopis_read_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/putopis_read_more"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/putopis_text" />
+
+        <!--<ru.embersoft.expandabletextview.ExpandableTextView
+            android:id="@+id/putopis_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:maxHeight="100dp"
+            app:etv_animationTime="5"
+            app:etv_expandLines="4"
+            app:etv_textContentColor="@color/black"
+            app:etv_textContentSize="15sp"
+            app:etv_textExpand="Prikaži više"
+            app:etv_textShrink="Prikaži manje"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/putopis_author"/>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/toolbar_reminder_action"
+        android:title="@string/toolbar_reminder"
+        android:icon="@drawable/icon_event_reminder"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/toolbar_bookmark_action"
+        android:title="@string/toolbar_bookmark"
+        android:icon="@drawable/icon_bookmark"
+        app:showAsAction="always"/>
+</menu>
