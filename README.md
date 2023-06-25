@@ -15,7 +15,7 @@ Android aplikacija s ulogom turističkog vodiča
 - Korisnik
   - odabir grada ili automatsko lociranje
   - pregled lokacija i ocjenjivanje (top liste)
-  - izrada listi što želimo posjetiti
+  - izrada listi što želimo posjetiti (stavke popisa sadrže poveznicu na informacije)
   - uključivanje podsjetnika za događanja
   - objava putopisa, te pregled i komentiranje putopisa drugih korisnika
   - obavijesti za nove gradove, nove lokacije odabranog grada i komentare
