@@ -1,5 +1,5 @@
 ## Digital Tourist Guide
-[![en](https://img.shields.io/badge/lang-hr-blue.svg)](https://github.com/a-lorena/Digital_tourist_guide/blob/main/README.md)
+[![hr](https://img.shields.io/badge/lang-hr-blue.svg)](https://github.com/a-lorena/Digital_tourist_guide/blob/main/README.md)
 
 Android application serving as a tourist guide.
 
