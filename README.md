@@ -1,5 +1,5 @@
 ## Digitalni turistički vodič
-[![hr](https://img.shields.io/badge/lang-en-green.svg)](https://github.com/a-lorena/Digital_tourist_guide/blob/main/README.en.md)
+[![en](https://img.shields.io/badge/lang-en-green.svg)](https://github.com/a-lorena/Digital_tourist_guide/blob/main/README.en.md)
 
 Android aplikacija s ulogom turističkog vodiča
 
